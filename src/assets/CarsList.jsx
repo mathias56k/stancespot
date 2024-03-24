@@ -1,11 +1,6 @@
 function CarsList() {
   return (
     <div className="flex flex-col items-center">
-      <div className="flex justify-end items-center w-[90%] mb-2">
-        <button className="text-[1.25rem] font-mukta font-bold text-[#F9F4F5] bg-[#484848] rounded-[5px] px-3 py-1">
-          Filter
-        </button>
-      </div>
       <div className="flex flex-col items-center gap-8">
         <div className="w-[90%]">
           <div className="rounded-t-[5px]">

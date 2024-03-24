@@ -1,24 +1,27 @@
 import React, { useState } from "react";
-import { Navbar as MaterialNavbar, MobileNav, Typography, Button, IconButton, Card } from "@material-tailwind/react";
+import { Navbar as MaterialNavbar, Collapse, Typography, IconButton } from "@material-tailwind/react";
 import CarsList from "./CarsList";
+
+import { LiaFacebookSquare } from "react-icons/lia";
+import { FaTiktok } from "react-icons/fa";
+import { GrInstagram } from "react-icons/gr";
 
 function Navbar() {
   const [openNav, setOpenNav] = useState(false);
 
   const navList = (
     <ul className="mt-4 mb-0 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <Typography as="li" color="#F9F4F5" className="p-1 font-normal hover:bg-gradient-to-r from-[#1D976C] to-[#93F9B9] hover:text-transparent inline-block bg-clip-text">
-        <a href="#" className="flex items-center font-mukta font-bold text-2xl">Pages</a>
+      <Typography as="li" className="p-1 font-bold hover:bg-gradient-to-r from-[#1D976C] to-[#93F9B9] hover:text-transparent inline-block bg-clip-text">
+        <a href="#" className="flex items-center font-mukta text-2xl">About</a>
       </Typography>
-      <Typography as="li" variant="medium" color="#F9F4F5" className="p-1 font-normal hover:bg-gradient-to-r from-[#1D976C] to-[#93F9B9] hover:text-transparent inline-block bg-clip-text">
-        <a href="#" className="flex items-center font-mukta font-bold text-2xl">Account</a>
+      <Typography as="li" className="p-1 font-bold hover:bg-gradient-to-r from-[#1D976C] to-[#93F9B9] hover:text-transparent inline-block bg-clip-text">
+        <a href="#" className="flex items-center font-mukta text-2xl">Submit your car</a>
       </Typography>
-      <Typography as="li" variant="medium" color="#F9F4F5" className="p-1 font-normal hover:bg-gradient-to-r from-[#1D976C] to-[#93F9B9] hover:text-transparent inline-block bg-clip-text">
-        <a href="#" className="flex items-center font-mukta font-bold text-2xl">Blocks</a>
-      </Typography>
-      <Typography as="li" variant="medium" color="#F9F4F5" className="p-1 font-normal hover:bg-gradient-to-r from-[#1D976C] to-[#93F9B9] hover:text-transparent inline-block bg-clip-text">
-        <a href="#" className="flex items-center font-mukta font-bold text-2xl">Docs</a>
-      </Typography>
+      <div className="w-full flex items-center justify-around mt-2 pb-2">
+        <a href=""><LiaFacebookSquare className="w-9 h-9 hover:fill-[#1D976C]"/></a>
+        <a href=""><FaTiktok className="w-6 h-6 hover:fill-[#1D976C]"/></a>
+        <a href=""><GrInstagram className="w-6 h-6 hover:fill-[#1D976C]"/></a>
+      </div>
     </ul>
   );
 
@@ -26,7 +29,7 @@ function Navbar() {
     <div>
       <MaterialNavbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-8 py-4 mb-2 lg:px-8 lg:py-6 bg-transparent border-none shadow-none">
         <div className="flex items-center justify-between text-[#F9F4F5]">
-            <img src="./stancespot.png" className="h-9" alt="" />
+            <a href="./"><img src="./stancespot.png" className="h-9" alt="" /></a>
             <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
             <IconButton
@@ -47,7 +50,7 @@ function Navbar() {
             </IconButton>
           </div>
         </div>
-        <MobileNav open={openNav}>{navList}</MobileNav>
+        <Collapse open={openNav} className="lg:hidden">{navList}</Collapse>
       </MaterialNavbar>
       <CarsList/>
     </div>

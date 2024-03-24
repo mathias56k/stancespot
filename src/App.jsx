@@ -1,10 +1,9 @@
-import StickyNavbar from "./assets/Navbar"
-import CarsList from "./assets/CarsList"
+import Navbar from "./assets/Navbar"
 
 function App() {
   return (
     <>
-      <StickyNavbar/>
+      <Navbar/>
     </>
   )
 }
