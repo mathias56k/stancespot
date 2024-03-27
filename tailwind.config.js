@@ -11,7 +11,10 @@ module.exports = withMT({
         fontFamily: { 
             "mukta": ['Mukta', 'sans-serif'] 
         } 
-    }, 
+    },
+    screens: {
+      'xxl': '1900px',
+    }
 }, 
   plugins: [],
 });
