@@ -1,11 +1,16 @@
-import Navbar from "./assets/Navbar"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Homepage from "./Homepage";
+import NewCarDetails from "./NewCarDetails";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <Navbar/>
-    </>
-  )
-}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/cars/:id" element={<NewCarDetails />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;
